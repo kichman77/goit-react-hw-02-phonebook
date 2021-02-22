@@ -13,15 +13,20 @@ class ContactForm extends Component {
     this.setState({
       [event.target.name]: event.target.value,
     });
+    this.props.getValue(event.target);
   };
   handleSubmit = (event) => {
     event.preventDefault();
+    const { name, phone } = this.state;
+    // if (name || phone) return;
+
     const contact = {
       id: uuidv4(),
-      name: this.state.name,
-      phone: this.state.name,
+      name,
+      phone,
     };
-    this.props.addContact(contact)
+    this.props.addContact(contact);
+    this.setState({ name: "", phone: "" });
   };
   render() {
     // console.log("state : ", this.state);
@@ -33,13 +38,18 @@ class ContactForm extends Component {
           placeholder="name"
           name="name"
           type="text"
+          value={this.state.name}
+          required
         />
         <input
           onChange={this.handleChange}
           placeholder="phone number"
           name="phone"
           type="tel"
+          value={this.state.phone}
+          required
         />
+        <button type="submit">Add contact</button>
       </form>
     );
   }
