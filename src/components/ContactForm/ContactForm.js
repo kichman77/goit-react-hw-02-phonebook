@@ -32,7 +32,7 @@ class ContactForm extends Component {
     // console.log("state : ", this.state);
     // console.log(this.props.addContact);
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className={styles.form} onSubmit={this.handleSubmit}>
         <input
           onChange={this.handleChange}
           placeholder="name"
@@ -49,7 +49,7 @@ class ContactForm extends Component {
           value={this.state.phone}
           required
         />
-        <button type="submit">Add contact</button>
+        <button className={styles.btn} type="submit">Add contact</button>
       </form>
     );
   }

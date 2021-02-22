@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import styles from './Filter.module.css'
 class Filter extends Component {
   state = {
     filter: "",
@@ -13,7 +13,7 @@ class Filter extends Component {
 
   render() {
     return (
-      <input
+      <input className={styles.input}
         onInput={this.hamdleChange}
         placeholder="Find contacts by name"
         name="filter"

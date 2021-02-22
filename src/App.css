@@ -1,4 +1,19 @@
-
+button {
+  display: block;
+  padding: 5px;
+  margin: auto;
+  background-color: rgb(156, 156, 143);
+  cursor: pointer;
+  color: rgb(7, 7, 7);
+}
+ul {
+  padding: 0;
+}
 .App {
+  width: 50%;
+  margin: 0 auto;
   text-align: center;
+  border: 1px;
+  box-shadow: 0 0 10px rgb(202, 226, 15);
+  padding: 30px;
 }

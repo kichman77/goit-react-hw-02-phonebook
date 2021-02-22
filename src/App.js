@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
 import Filter from "./components/Filter/Filter";
-import stayles from "./index.css";
+import "./App.css";
 
 class App extends Component {
   state = {
@@ -53,7 +53,7 @@ class App extends Component {
   render() {
     console.log(this.state);
     return (
-      <div>
+      <div className="App">
         <h1>Phonebook</h1>
         <ContactForm addContact={this.addContact} getValue={this.getValue} />
         <h2>Contacts</h2>
