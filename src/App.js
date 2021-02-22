@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
 import Filter from "./components/Filter/Filter";
+import stayles from "./index.css";
 
 class App extends Component {
   state = {
@@ -17,11 +18,14 @@ class App extends Component {
   };
 
   addContact = (obj) => {
-    this.setState((prevState) => {
-      return {
-        contacts: [...prevState.contacts, obj],
-      };
-    });
+    const result = this.state.contacts.some((elem) => elem.name === obj.name);
+    result
+      ? alert(`Contact allready exist`)
+      : this.setState((prevState) => {
+          return {
+            contacts: [...prevState.contacts, obj],
+          };
+        });
   };
   getValue = (value) => {
     console.log(value);
