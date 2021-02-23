@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./ContactForm.module.css";
 import { v4 as uuidv4 } from "uuid";
+import PropTypes from "prop-types";
 class ContactForm extends Component {
   state = {
     name: "",
@@ -49,10 +50,17 @@ class ContactForm extends Component {
           value={this.state.phone}
           required
         />
-        <button className={styles.btn} type="submit">Add contact</button>
+        <button className={styles.btn} type="submit">
+          Add contact
+        </button>
       </form>
     );
   }
 }
 
 export default ContactForm;
+
+ContactForm.propTypes = {
+  getValue: PropTypes.func.isRequired,
+  addContact: PropTypes.func.isRequired,
+};
